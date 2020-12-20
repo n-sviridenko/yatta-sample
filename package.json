@@ -12,8 +12,11 @@
     "extract-intl": "NODE_ENV=development extract-messages -l=en -o src/translations -d en --flat 'src/**/!(*.test).ts'"
   },
   "dependencies": {
+    "@formatjs/intl-pluralrules": "^4.0.1",
+    "@formatjs/intl-relativetimeformat": "^8.0.1",
     "@types/big.js": "^6.0.1",
     "big.js": "^6.0.3",
+    "intl": "^1.2.5",
     "react": "16.13.1",
     "react-intl": "^5.10.9",
     "react-native": "0.63.3",

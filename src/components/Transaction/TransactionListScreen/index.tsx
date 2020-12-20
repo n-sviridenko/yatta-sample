@@ -29,7 +29,8 @@ const TransactionListScreen: React.FC<TransactionListScreenProps> = ({ transacti
           renderItem={({ item: group }: { item: TransactionGroup }) => {
             const { date, transactions } = group;
             const dateFmt = intl.formatDate(date, { weekday: 'long', day: 'numeric', month: 'long' });
-            const titleFmt = intl.formatMessage(messages.sectionTitle, { date: dateFmt, count: transactions.length });
+            const transactionFmt = intl.formatMessage(transactions.length > 1 ? messages.transactionPlural : messages.transactionSingular)
+            const titleFmt = intl.formatMessage(messages.sectionTitle, { date: dateFmt, count: transactions.length, transaction: transactionFmt });
             return (
               <List.Section
                 title={titleFmt}
